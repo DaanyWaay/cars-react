@@ -3,7 +3,6 @@ import { CarsDropdown } from "./components/Dropdown";
 import { getAllManufacturers, getModels, getEngines } from "./service.mock/service.mock";
 
 export const Cars = () => {
-
     useEffect(() => {
         // get all manufacturers
     }, []);
@@ -11,7 +10,7 @@ export const Cars = () => {
     return (
         <div>
             <h2>Selected your car</h2>
-            SELECTED AUTO: manufacturer { manufacturer } | model { model } | engine { engine }
+            SELECTED AUTO: manufacturer {manufacturer} | model {model} | engine {engine}
             <div className="cars-selector">
                 <span>Select manufacturer</span>
                 <CarsDropdown
@@ -24,7 +23,7 @@ export const Cars = () => {
                     }}
                 ></CarsDropdown>
                 <span>Select model</span>
-                <CarsDropdown 
+                <CarsDropdown
                     // disabled={} disable when no manufacturer is selected
                     header="Select"
                     options={[]} // add models for selected manufacturer
@@ -34,15 +33,14 @@ export const Cars = () => {
                     }}
                 ></CarsDropdown>
                 <span>Select engine</span>
-                <CarsDropdown 
+                <CarsDropdown
                     // disabled={} disable when no model is selected
                     header="Select"
                     options={[]} // add engines for selected manufacturer
                     onSelect={(id) => {
                         // set selected engine
                     }}
-                >
-                </CarsDropdown>
+                ></CarsDropdown>
             </div>
         </div>
     );
