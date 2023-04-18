@@ -1,6 +1,7 @@
+import { Engine, Manufacturer, Model } from "../types";
 import { mockedManufacturers, mockedModels, mockedEngines } from "./data.mock";
 
-export const getAllManufacturers = (): any => {
+export const getAllManufacturers = (): Promise<Manufacturer[]> => {
     return new Promise((res) => {
         setTimeout(() => {
             res(mockedManufacturers);
@@ -8,7 +9,7 @@ export const getAllManufacturers = (): any => {
     });
 };
 
-export const getModels = (manufacturerId: any): any => {
+export const getModels = (manufacturerId: any): Promise<Model[]> => {
     return new Promise((res) => {
         setTimeout(() => {
             res(mockedModels[manufacturerId]);
@@ -16,7 +17,7 @@ export const getModels = (manufacturerId: any): any => {
     });
 };
 
-export const getEngines = (modelId: any): any => {
+export const getEngines = (modelId: any): Promise<Engine[]> => {
     return new Promise((res) => {
         setTimeout(() => {
             res(mockedEngines[modelId]);

@@ -1,5 +1,6 @@
 import Dropdown from "react-bootstrap/Dropdown";
 import React from "react";
+import { SelectCallback } from "react-bootstrap/esm/helpers";
 
 export type DropdownOption = {
     id: string;
@@ -10,7 +11,7 @@ type CarsDropdownProps = {
     disabled: boolean;
     header: string;
     options: DropdownOption[];
-    onSelect: any;
+    onSelect: SelectCallback;
 };
 
 export const CarsDropdown: React.FC<CarsDropdownProps> = ({ disabled, header, options, onSelect }) => {
